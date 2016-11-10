@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('header')
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+@stop
+
 @section('content')
 
 <div class="row">
@@ -8,7 +13,7 @@
 
     <ul class="list-group">
         @foreach($card->notes as $note)
-        <li class="list-group-item">{{$note->body}}</li>
+        <li class="list-group-item">{{$note->body}}  <span class="pull-right"><a href="/notes/{{$note->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></li>
         @endforeach
     </ul>
 
